@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+header {
+  background: #d2afff;
+  color: black;
+  text-align: center;
+  padding: 2rem;
+}
+footer {
+  background: #d2afff;
+  color: black;
+  text-align: center;
+  padding: 1rem;
+}
+section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+h2 {
+  color: #333;
+}
+@media (max-width: 600px) {
+  section {
+    padding: 1rem;
+  }
+}
