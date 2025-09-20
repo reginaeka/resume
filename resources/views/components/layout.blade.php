@@ -37,9 +37,10 @@
 </head>
 
 <body class="index-page">
-    <x-header/> 
+    <x-partials.header/> 
   
     {{$slot}}
+
     <main class="main">
 
     <!-- Hero Section -->
@@ -62,7 +63,7 @@
 
   </main>
 
-  <x-footer />
+  <x-partials.footer />
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
