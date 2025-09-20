@@ -1438,6 +1438,22 @@ section,
   }
 }
 
+@media (max-width: 1200px) {
+ .contact .responsive-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* Untuk layar <770px: tampil 1 kolom */
+@media (max-width: 768px) {
+  .contact .responsive-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+
 .contact .php-email-form input[type=text],
 .contact .php-email-form input[type=email],
 .contact .php-email-form textarea {

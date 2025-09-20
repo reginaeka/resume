@@ -5,7 +5,7 @@
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
               <h1>Contact</h1>
-              <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <!-- <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p> -->
             </div>
           </div>
         </div>
@@ -13,7 +13,7 @@
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li class="current">Contact</li>
           </ol>
         </div>
@@ -26,54 +26,41 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
-
-          <div class="col-md-6">
+          <div class="col-md-4 responsive-col">
+            <a href="https://maps.app.goo.gl/kdCB9gXErsdMsmR1A">
             <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
               <i class="icon bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>Jakarta Selatan, DKI Jakarta, Indonesia</p>
               </div>
             </div>
+          </a>
           </div><!-- End Info Item -->
 
-          <div class="col-md-6">
-            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
-              <i class="icon bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Me</h3>
-                <p>+1 5589 55488 55</p>
-              </div>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-md-6">
+          <div class="col-md-4 responsive-col">
+          <a href="mailto:ekaregina846@gmail.com">
             <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
               <i class="icon bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email Us</h3>
-                <p>info@example.com</p>
+                <p>ekaregina846@gmail.com</p>
               </div>
             </div>
-          </div><!-- End Info Item -->
+          </a>
+        </div><!-- End Info Item -->
 
-          <div class="col-md-6">
+        <div class="col-md-4 responsive-col">
+          <a href="https://www.linkedin.com/in/regina-septianad/">
             <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="500">
-              <i class="icon bi bi-share flex-shrink-0"></i>
+              <i class="icon bi bi-linkedin flex-shrink-0"></i>
               <div>
-                <h3>Social Profiles</h3>
-                <div class="social-links">
-                  <a href="#"><i class="bi bi-twitter-x"></i></a>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                  <a href="#"><i class="bi bi-instagram"></i></a>
-                  <a href="#"><i class="bi bi-skype"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
-                </div>
+                <h3>LinkedIn</h3>
               </div>
             </div>
-          </div><!-- End Info Item -->
-
-        </div>
+          </a>
+        </div><!-- End Info Item -->
+      
 
         <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
           <div class="row gy-4">
