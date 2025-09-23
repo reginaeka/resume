@@ -1,5 +1,5 @@
 <x-layout>
     <main class="main">
-        <x-pages.about />
+        <x-pages.resume />
   </main>
 </x-layout>

@@ -56,6 +56,7 @@
               <i class="icon bi bi-linkedin flex-shrink-0"></i>
               <div>
                 <h3>LinkedIn</h3>
+                <p>Regina Eka Septianadrah</p>
               </div>
             </div>
           </a>
