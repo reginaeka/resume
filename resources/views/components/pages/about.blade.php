@@ -87,11 +87,8 @@
     </div><!-- End Section Title -->
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
+        <div class="row skills-content skills-animation g-5">
             <div class="col-lg-6">
-
                 <div class="progress">
                     <span class="skill"><span>Revit</span> <i class="val">90%</i></span>
                     <div class="progress-bar-wrap">
@@ -127,7 +124,6 @@
             </div>
 
             <div class="col-lg-6">
-
                 <div class="progress">
                     <span class="skill"><span>AutoCAD</span> <i class="val">95%</i></span>
                     <div class="progress-bar-wrap">

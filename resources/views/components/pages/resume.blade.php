@@ -27,14 +27,10 @@
 
   <!-- Resume Section -->
   <section id="resume" class="resume section">
-
       <div class="container">
-
           <div class="row">
-
               <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                   <h3 class="resume-title">Sumary</h3>
-
                   <div class="resume-item pb-0">
                       <h4>Regina Eka Septianadrah</h4>
                       <p><em>Highly skilled Structural Drafter with over nine years of experience in the architecture,
@@ -42,13 +38,26 @@
                               Cloud integration to deliver precise, compliant structural models and drawings. Adept at
                               collaborating directly with BIM leadership, meeting tight deadlines, and adapting to
                               evolving design requirements across both local and international projects.
-                          </em></p>
-                      <ul>
-                          <li>Jakarta Selatan, DKI Jakarta, Indonesia</li>
-                          <li>ekaregina846@gmail.com</li>
-                      </ul>
+                          </em>
+                      </p>
+
+                      <div class="d-flex flex-column">
+                          <!-- konten lain di atas -->
+                          <div class="pb-4 d-flex flex-column">
+                              <a class="p-2" href="https://maps.app.goo.gl/kdCB9gXErsdMsmR1A">
+                                  <i class="icon bi bi-geo-alt"> Jakarta Selatan, DKI Jakarta, Indonesia</i>
+                              </a>
+                              <a class="p-2" href="mailto:ekaregina846@gmail.com">
+                                  <i class="icon bi bi-envelope"> ekaregina846@gmail.com</i>
+                              </a>
+                              <a class="p-2" href="https://www.linkedin.com/in/regina-septianad/">
+                                  <i class="icon bi bi-linkedin"> Regina Eka Septianadrah</i>
+                              </a>
+                          </div>
+                      </div>
                   </div><!-- Edn Resume Item -->
 
+                  {{-- Education --}}
                   <h3 class="resume-title">Education</h3>
                   <div class="resume-item">
                       <h4>Bachelor of Structural</h4>
@@ -64,9 +73,9 @@
                       <h5>2012 - 2015</h5>
                       <p>Building Design and Drafting</p>
                   </div><!-- Edn Resume Item -->
-
               </div>
 
+              {{-- Professional Experience --}}
               <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                   <h3 class="resume-title">Professional Experience</h3>
                   <div class="resume-item">

@@ -19,8 +19,6 @@
                  <li><a href="/" class="{{ Request::is('/') ? 'active' : '' }}">Home</a></li>
                  <li><a href="/about" class="{{ Request::is('about') ? 'active' : '' }}">About</a></li>
                  <li><a href="/resume" class="{{ Request::is('resume') ? 'active' : '' }}">Resume</a></li>
-                 <li><a href="/services" class="{{ Request::is('services') ? 'active' : '' }}">Services</a></li>
-                 <li><a href="/portfolio" class="{{ Request::is('portofolio') ? 'active' : '' }}">Portfolio</a></li>
                  <li><a href="/contact" class="{{ Request::is('contact') ? 'active' : '' }}">Contact</a></li>
              </ul>
              <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
