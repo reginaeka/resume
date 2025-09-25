@@ -47,8 +47,10 @@
                             <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
                                 <a href="/"><span>reginaseptianadrah.great-site.net</span></a>
                             </li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Jakarta Selatan,
-                                    Indonesia</span>
+                            <li><i class="bi bi-chevron-right"></i> <strong>City:</strong>
+                                <a href="https://maps.app.goo.gl/2bWXjs7xz7pBb9Vx7 ">
+                                    <span>Jakarta Selatan, DKI Jakarta, Indonesia</span>
+                                </a>
                             </li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span>
                             </li>
@@ -59,7 +61,7 @@
                             <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>29</span></li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor</span></li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
-                                <span>ekaregina846@gmail.com</span>
+                                <a href="mailto:ekaregina846@gmail.com"> <span>ekaregina846@gmail.com</span></a>
                             </li>
 
                         </ul>
