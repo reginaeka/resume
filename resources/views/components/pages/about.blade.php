@@ -45,7 +45,8 @@
                                     Septianadrah</span>
                             </li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
-                                <span>reginaseptianadrah.great-site.net</span>
+                                <a
+                                    href="reginaseptianadrah.great-site.net"><span>reginaseptianadrah.great-site.net</span></a>
                             </li>
                             <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Jakarta Selatan,
                                     Indonesia</span>
