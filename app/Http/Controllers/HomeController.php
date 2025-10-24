@@ -13,12 +13,7 @@ class HomeController extends Controller
     {
         $users = User::all();
 
-        dd($users);
-
-        if (request('keyword')) {
-            $posts->where('title','like','%'.request('keyword').'%');
-        }
-        // dd($posts);
-        return view('dashboard.index',['posts'=>$posts->paginate(5)->withQueryString()]);
+        // dd($users);
+        return view('home',['user'=>$users->first()]);
     }
 }
