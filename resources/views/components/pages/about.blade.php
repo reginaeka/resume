@@ -31,7 +31,7 @@
                 <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
             </div>
             <div class="col-lg-8 content">
-                <h2>BIM Modeler</h2>
+                <h2>{{ $user->role }}</h2>
                 <p class="fst-italic py-3">
                     I am a dedicated Structural Drafter with over nine years of experience in the architecture,
                     engineering, and construction industry. I leverage Revit, AutoCAD, and point-cloud data to deliver
@@ -41,15 +41,15 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Name:</strong> <span>Regina Eka
-                                    Septianadrah</span>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Name:</strong>
+                                <span>{{ $user->name }}</span>
                             </li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
-                                <a href="/"><span>reginaseptianadrah.great-site.net</span></a>
+                                <a href="https://{{ $user->website }}"><span>{{ $user->website }}</span></a>
                             </li>
                             <li><i class="bi bi-chevron-right"></i> <strong>City:</strong>
                                 <a href="https://maps.app.goo.gl/2bWXjs7xz7pBb9Vx7 ">
-                                    <span>Jakarta Selatan, DKI Jakarta, Indonesia</span>
+                                    <span>{{ $user->city }}</span>
                                 </a>
                             </li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span>
@@ -58,10 +58,12 @@
                     </div>
                     <div class="col-lg-6">
                         <ul>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>29</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong>
+                                <span>{{ $user->age }} Tahun</span>
+                            </li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor</span></li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
-                                <a href="mailto:ekaregina846@gmail.com"> <span>ekaregina846@gmail.com</span></a>
+                                <a href="mailto:{{ $sosmed[0]->link }}"> <span>{{ $sosmed[0]->link }}</span></a>
                             </li>
 
                         </ul>
@@ -90,67 +92,27 @@
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row skills-content skills-animation g-5">
-            <div class="col-lg-6">
-                <div class="progress">
-                    <span class="skill"><span>Revit</span> <i class="val">90%</i></span>
-                    <div class="progress-bar-wrap">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                    </div>
-                </div><!-- End Skills Item -->
+            @php
+                $chunks = collect($skills)->chunk(ceil(count($skills) / 2));
+            @endphp
 
-                <div class="progress">
-                    <span class="skill"><span>Point Cloud Modeling</span> <i class="val">85%</i></span>
-                    <div class="progress-bar-wrap">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                    </div>
-                </div><!-- End Skills Item -->
-
-                <div class="progress">
-                    <span class="skill"><span>Naviswork</span> <i class="val">85%</i></span>
-                    <div class="progress-bar-wrap">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                    </div>
-                </div><!-- End Skills Item -->
-
-                <div class="progress">
-                    <span class="skill"><span>Enscape 3D View</span> <i class="val">50%</i></span>
-                    <div class="progress-bar-wrap">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                    </div>
-                </div><!-- End Skills Item -->
-
-            </div>
-
-            <div class="col-lg-6">
-                <div class="progress">
-                    <span class="skill"><span>AutoCAD</span> <i class="val">95%</i></span>
-                    <div class="progress-bar-wrap">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                    </div>
-                </div><!-- End Skills Item -->
-
-                <div class="progress">
-                    <span class="skill"><span>Structural Drafting</span> <i class="val">90%</i></span>
-                    <div class="progress-bar-wrap">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                    </div>
-                </div><!-- End Skills Item -->
-
-                <div class="progress">
-                    <span class="skill"><span>IDEA StatiCa</span> <i class="val">80%</i></span>
-                    <div class="progress-bar-wrap">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                    </div>
-                </div><!-- End Skills Item -->
-
-            </div>
+            @foreach ($chunks as $chunk)
+                <div class="col-lg-6">
+                    @foreach ($chunk as $skill)
+                        <div class="progress">
+                            <span class="skill">
+                                <span>{{ $skill['skill'] }}</span>
+                                <i class="val">{{ $skill['percentage'] }}%</i>
+                            </span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{ $skill['percentage'] }}"
+                                    aria-valuemin="0" aria-valuemax="100" style="width: {{ $skill['percentage'] }}%;">
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endforeach
 
         </div>
 
