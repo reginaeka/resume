@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SocialMedia;
 use Illuminate\Http\Request;
 use App\Models\User;
 class HomeController extends Controller
@@ -12,8 +13,12 @@ class HomeController extends Controller
     public function index()
     {
         $users = User::all();
+        $sosmed = SocialMedia::all();
 
         // dd($users);
-        return view('home',['user'=>$users->first()]);
+        return view('home',[
+            'user'=>$users->first(),
+            'sosmed'=>$sosmed
+        ]);
     }
 }

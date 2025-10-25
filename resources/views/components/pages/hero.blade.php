@@ -1,6 +1,6 @@
     <!-- Hero Section -->
 
-    {{-- @dd($user->name); --}}
+    {{-- @dd($sosmed[1]->link) --}}
 
     <section id="hero" class="hero section dark-background">
 
@@ -11,8 +11,8 @@
             <p>I'm <span class="typed" data-typed-items="{{ $user->role }}"></span><span
                     class="typed-cursor typed-cursor--blink"></span></p>
             <div class="social-links">
-                <a href="mailto:{{ $user->email }}"><i class="bi bi-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/regina-septianad/"><i class="bi bi-linkedin"></i></a>
+                <a href="mailto:{{ $sosmed[0]->link }}"><i class="{{ $sosmed[0]->icon }}"></i></a>
+                <a href="{{ $sosmed[1]->link }}"><i class="{{ $sosmed[1]->icon }}"></i></a>
             </div>
         </div>
 
