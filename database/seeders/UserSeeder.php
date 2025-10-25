@@ -15,7 +15,6 @@ class UserSeeder extends Seeder
     {
          User::create([
             'name'=>'Regina Septianadrah',
-            'email'=>'ekaregina846@gmail.com',
             'phoneNum'=>'(62)81295656710',
             'dob'=>'06/09/1996',
             'website'=>'reginaseptianadrah.great-site.net',
