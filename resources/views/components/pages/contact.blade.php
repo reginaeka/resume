@@ -30,25 +30,34 @@
                             <i class="icon bi bi-geo-alt flex-shrink-0"></i>
                             <div>
                                 <h3>Address</h3>
-                                <p>Jakarta Selatan, DKI Jakarta, Indonesia</p>
+                                <p>{{ $user->city }}</p>
                             </div>
                         </div>
                     </a>
                 </div><!-- End Info Item -->
 
-                <div class="col-md-4 responsive-col">
-                    <a href="mailto:ekaregina846@gmail.com">
-                        <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
-                            <i class="icon bi bi-envelope flex-shrink-0"></i>
-                            <div>
-                                <h3>Email Us</h3>
-                                <p>ekaregina846@gmail.com</p>
-                            </div>
-                        </div>
-                    </a>
-                </div><!-- End Info Item -->
+                @foreach ($sosmeds as $sosmed)
+                    @php
+                        $sosmedType = $sosmed->type === 'email' ? 'mailto:' . $sosmed->href : $sosmed->href;
+                        $label = $sosmed->type === 'email' ? 'Email Us' : 'LinkedIn';
+                    @endphp
 
-                <div class="col-md-4 responsive-col">
+                    {{-- @dd($sosmedType) --}}
+
+                    <div class="col-md-4 responsive-col">
+                        <a href="{{ $sosmedType }}">
+                            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
+                                <i class="icon {{ $sosmed->icon }} flex-shrink-0"></i>
+                                <div>
+                                    <h3>{{ $label }}</h3>
+                                    <p>{{ $sosmed->label }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div><!-- End Info Item -->
+                @endforeach
+
+                {{-- <div class="col-md-4 responsive-col">
                     <a href="https://www.linkedin.com/in/regina-septianad/">
                         <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="500">
                             <i class="icon bi bi-linkedin flex-shrink-0"></i>
@@ -58,7 +67,7 @@
                             </div>
                         </div>
                     </a>
-                </div><!-- End Info Item -->
+                </div><!-- End Info Item --> --}}
 
 
                 <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"

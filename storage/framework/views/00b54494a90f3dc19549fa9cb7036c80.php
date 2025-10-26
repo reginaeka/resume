@@ -30,35 +30,34 @@
                             <i class="icon bi bi-geo-alt flex-shrink-0"></i>
                             <div>
                                 <h3>Address</h3>
-                                <p>Jakarta Selatan, DKI Jakarta, Indonesia</p>
+                                <p><?php echo e($user->city); ?></p>
                             </div>
                         </div>
                     </a>
                 </div><!-- End Info Item -->
 
-                <div class="col-md-4 responsive-col">
-                    <a href="mailto:ekaregina846@gmail.com">
-                        <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
-                            <i class="icon bi bi-envelope flex-shrink-0"></i>
-                            <div>
-                                <h3>Email Us</h3>
-                                <p>ekaregina846@gmail.com</p>
-                            </div>
-                        </div>
-                    </a>
-                </div><!-- End Info Item -->
+                <?php $__currentLoopData = $sosmeds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sosmed): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php
+                        $sosmedType = $sosmed->type === 'email' ? 'mailto:' . $sosmed->href : $sosmed->href;
+                        $label = $sosmed->type === 'email' ? 'Email Us' : 'LinkedIn';
+                    ?>
 
-                <div class="col-md-4 responsive-col">
-                    <a href="https://www.linkedin.com/in/regina-septianad/">
-                        <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="500">
-                            <i class="icon bi bi-linkedin flex-shrink-0"></i>
-                            <div>
-                                <h3>LinkedIn</h3>
-                                <p>Regina Eka Septianadrah</p>
+                    
+
+                    <div class="col-md-4 responsive-col">
+                        <a href="<?php echo e($sosmedType); ?>">
+                            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
+                                <i class="icon <?php echo e($sosmed->icon); ?> flex-shrink-0"></i>
+                                <div>
+                                    <h3><?php echo e($label); ?></h3>
+                                    <p><?php echo e($sosmed->label); ?></p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div><!-- End Info Item -->
+                        </a>
+                    </div><!-- End Info Item -->
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                
 
 
                 <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
