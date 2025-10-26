@@ -238,7 +238,7 @@
 
                   <div class="resume-item">
                       <h4>PT. Sinar Surya Alumindo | Tangerang, Indonesia</h4>
-                      <h5>Dec 2015 - Dec 2015</h5>
+                      <h5>Dec 2015 - Dec 2020</h5>
                       <ul>
                           <li>PT. Adhi Persada Gedung | Platinum Hotel – Surabaya
                               <ul>
