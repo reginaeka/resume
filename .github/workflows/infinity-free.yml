@@ -24,7 +24,7 @@ jobs:
           server: ftpupload.net
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: public/assets
+          local-dir: /public/assets
           server-dir: /htdocs/assets
           # server-dir: /reginaseptianadrah.great-site.net/htdocs/ # For addon domains
           timeout: 86400000
