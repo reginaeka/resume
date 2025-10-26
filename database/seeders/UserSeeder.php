@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
             'city'=>'Jakarta Selatan, DKI Jakarta, Indonesia',
             'role'=>'BIM Modeler',
             'summary'=>'Highly skilled Structural Drafter with over nine years of experience in the architecture, engineering, and construction industry, specializing in Revit, AutoCAD, and advanced Point Cloud integration to deliver precise, compliant structural models and drawings. Adept at collaborating directly with BIM leadership, meeting tight deadlines, and adapting to evolving design requirements across both local and international projects.',
+            'pict'=>'regina-profile-img.jpg',
         ]);
     }
 }

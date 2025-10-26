@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('role');
             $table->string('summary');
+            $table->string('pict');
             $table->timestamps();
         });
 
