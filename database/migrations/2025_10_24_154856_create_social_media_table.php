@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('social_media', function (Blueprint $table) {
             $table->id();
-            $table->string('sosmed');
-            $table->string('link');
+            $table->string('type');
+            $table->string('href');
+            $table->string('label');
             $table->string('icon');
             $table->timestamps();
         });

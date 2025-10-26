@@ -32,53 +32,105 @@
               <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                   <h3 class="resume-title">Sumary</h3>
                   <div class="resume-item pb-0">
-                      <h4>Regina Eka Septianadrah</h4>
-                      <p><em>Highly skilled Structural Drafter with over nine years of experience in the architecture,
-                              engineering, and construction industry, specializing in Revit, AutoCAD, and advanced Point
-                              Cloud integration to deliver precise, compliant structural models and drawings. Adept at
-                              collaborating directly with BIM leadership, meeting tight deadlines, and adapting to
-                              evolving design requirements across both local and international projects.
+                      <h4>{{ $user->name }}</h4>
+                      <p><em>{{ $user->summary }}
                           </em>
                       </p>
 
                       <div class="d-flex flex-column">
-                          <!-- konten lain di atas -->
                           <div class="pb-4 d-flex flex-column">
                               <a class="p-2" href="https://maps.app.goo.gl/kdCB9gXErsdMsmR1A">
-                                  <i class="icon bi bi-geo-alt"> Jakarta Selatan, DKI Jakarta, Indonesia</i>
+                                  <i class="icon bi bi-geo-alt"> {{ $user->city }}</i>
                               </a>
-                              <a class="p-2" href="mailto:ekaregina846@gmail.com">
-                                  <i class="icon bi bi-envelope"> ekaregina846@gmail.com</i>
-                              </a>
-                              <a class="p-2" href="https://www.linkedin.com/in/regina-septianad/">
-                                  <i class="icon bi bi-linkedin"> Regina Eka Septianadrah</i>
-                              </a>
+                              @foreach ($sosmeds as $sosmed)
+                                  <a class="p-2" href="{{ $sosmed->href }}">
+                                      <i class="icon {{ $sosmed->icon }}"> {{ $sosmed->label }}</i>
+                                  </a>
+                              @endforeach
                           </div>
                       </div>
                   </div><!-- Edn Resume Item -->
 
                   {{-- Education --}}
                   <h3 class="resume-title">Education</h3>
-                  <div class="resume-item">
-                      <h4>Bachelor of Structural</h4>
-                      <p><em>Mercu Buana University</em></p>
-                      <h5>2017 - 2022</h5>
-                      <p>Redesign of a Ten-Story Hotel Utilizing Steel Structure in Compliance with SNI 1729:2020 and
-                          SNI 1726:2019</p>
-                  </div><!-- Edn Resume Item -->
-
-                  <div class="resume-item">
-                      <h4>High School Graduate</h4>
-                      <p><em>SMK Negeri 1 Rembang</em></p>
-                      <h5>2012 - 2015</h5>
-                      <p>Building Design and Drafting</p>
-                  </div><!-- Edn Resume Item -->
+                  @foreach ($educations as $edu)
+                      <div class="resume-item">
+                          <h4>{{ $edu->degree }}</h4>
+                          <p><em>{{ $edu->school }}</em></p>
+                          <h5>{{ $edu->startYear }} - {{ $edu->endYear }}</h5>
+                          <p>{{ $edu->thesis }}</p>
+                      </div><!-- Edn Resume Item -->
+                  @endforeach
               </div>
 
               {{-- Professional Experience --}}
               <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                   <h3 class="resume-title">Professional Experience</h3>
-                  <div class="resume-item">
+                  @foreach ($experiences as $exp)
+                      {{-- @dd($exp->projects) --}}
+                      <div class="resume-item">
+                          <h4>{{ $exp->company }} | {{ $exp->location }} </h4>
+                          <h5>{{ $exp->startDate }} - {{ $exp->endDate }}</h5>
+                          <ul>
+                              @foreach ($exp->projects as $project)
+                                  <li>
+                                      {{ $project->projectLocation }}
+
+                                      @php
+                                          $startDate = $project->startDate
+                                              ? \Carbon\Carbon::parse($project->startDate)->format('M')
+                                              : null;
+                                          $endDate = $project->endDate ? $project->endDate : null;
+                                      @endphp
+
+                                      @if ($startDate && $endDate)
+                                          | {{ $startDate }} - {{ $endDate }}
+                                      @else
+                                      @endif
+
+                                      {{-- 
+                                      {{ \Carbon\Carbon::parse($project->startDate)->format('M') }} -
+                                      {{ $project->endDate }} --}}
+
+                                      <ul>
+                                          @foreach (explode('.', $project->description) as $sentence)
+                                              @if (trim($sentence) !== '')
+                                                  <li>{{ trim($sentence) }}.</li>
+                                              @endif
+                                          @endforeach
+
+                                      </ul>
+                                  </li>
+                              @endforeach
+                              {{-- 
+                              <li>BFB Fitness Hotel – Bali
+                                  <ul>
+                                      <li>Developed detailed structural layouts and sectional views, coordinating
+                                          closely
+                                          with structural engineers throughout design and construction phases.</li>
+                                      <li>Assisted in on-site revisions and drawing updates to reflect real-time
+                                          changes
+                                          and
+                                          ensure structural integrity.</li>
+                                  </ul>
+                              </li>
+                              <li>Data Center Project – Early Phase
+                                  <ul>
+                                      <li>Initiated structural drafting for foundational systems, focusing on
+                                          load-bearing
+                                          elements and spatial planning.</li>
+                                      <li>Contributed to early-stage documentation to support feasibility analysis
+                                          and
+                                          engineering review.</li>
+                                  </ul>
+                              </li> --}}
+                          </ul>
+                      </div><!-- Edn Resume Item -->
+                  @endforeach
+
+
+
+                  {{-- <div class="resume-item">
                       <h4>PT. Meinhardt Indonesia | Jakarta, Indonesia </h4>
                       <h5>Mar 2025 - Present</h5>
                       <ul>
@@ -307,7 +359,7 @@
                               </ul>
                           </li>
                       </ul>
-                  </div>
+                  </div> --}}
               </div>
           </div>
       </div>

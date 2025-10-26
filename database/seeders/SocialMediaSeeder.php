@@ -15,15 +15,17 @@ class SocialMediaSeeder extends Seeder
     {
         // Email
          SocialMedia::create([
-            'sosmed'=>'email',
-            'link'=>'ekaregina846@gmail.com',
+            'type'=>'email',
+            'href'=>'ekaregina846@gmail.com',
+            'label'=>'ekaregina846@gmail.com',
             'icon'=>'bi bi-envelope',
         ]);
 
         // LinkedIn
          SocialMedia::create([
-            'sosmed'=>'linkedin',
-            'link'=>'https://www.linkedin.com/in/regina-septianad/',
+            'type'=>'linkedin',
+            'href'=>'https://www.linkedin.com/in/regina-septianad/',
+            'label'=>'Regina Septianadrah',
             'icon'=>'bi bi-linkedin',
         ]);
     }
