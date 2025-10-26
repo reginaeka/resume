@@ -11,14 +11,14 @@
     <main class="main">
         <?php if (isset($component)) { $__componentOriginal697918e665503d12cedb6b0a4e1f89cb = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal697918e665503d12cedb6b0a4e1f89cb = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.pages.about','data' => ['user' => $user,'sosmed' => $sosmed,'skills' => $skills]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.pages.about','data' => ['user' => $user,'sosmed' => $sosmed,'skills' => $skills,'education' => $education]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('pages.about'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['user' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($user),'sosmed' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($sosmed),'skills' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($skills)]); ?>
+<?php $component->withAttributes(['user' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($user),'sosmed' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($sosmed),'skills' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($skills),'education' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($education)]); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal697918e665503d12cedb6b0a4e1f89cb)): ?>

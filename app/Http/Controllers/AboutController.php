@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Education;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -22,14 +23,16 @@ class AboutController extends Controller
         $user->age = $age;
         
         $sosmed = SocialMedia::all();       
-
         $skills = Skill::all();
+        $education = Education::first();
+        $education->short_degree = explode(' ', $education->degree)[0];
 
-        // dd($users);
+        // dd($education);
         return view('about',[
             'user'=>$user,
             'sosmed'=>$sosmed,
-            'skills'=>$skills
+            'skills'=>$skills,
+            'education'=>$education
         ]);
     }
 }

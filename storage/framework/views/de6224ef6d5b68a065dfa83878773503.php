@@ -28,7 +28,7 @@
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 justify-content-center">
             <div class="col-lg-4">
-                <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+                <img src="assets/img/<?php echo e($user->pict); ?>" class="img-fluid img-rounded" alt="">
             </div>
             <div class="col-lg-8 content">
                 <h2><?php echo e($user->role); ?></h2>
@@ -61,7 +61,9 @@
                             <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong>
                                 <span><?php echo e($user->age); ?> Tahun</span>
                             </li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong>
+                                <span><?php echo e($education->short_degree); ?></span>
+                            </li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
                                 <a href="mailto:<?php echo e($sosmed[0]->link); ?>"> <span><?php echo e($sosmed[0]->link); ?></span></a>
                             </li>
