@@ -11,8 +11,13 @@
             <p>I'm <span class="typed" data-typed-items="{{ $user->role }}"></span><span
                     class="typed-cursor typed-cursor--blink"></span></p>
             <div class="social-links">
-                <a href="mailto:{{ $sosmed[0]->link }}"><i class="{{ $sosmed[0]->icon }}"></i></a>
-                <a href="{{ $sosmed[1]->link }}"><i class="{{ $sosmed[1]->icon }}"></i></a>
+                @foreach ($sosmeds as $sosmed)
+                    @php
+                        $sosmedType = $sosmed->type === 'email' ? 'mailto:' . $sosmed->href : $sosmed->href;
+                    @endphp
+
+                    <a href="{{ $sosmedType }}"><i class="{{ $sosmed->icon }}"></i></a>
+                @endforeach
             </div>
         </div>
 

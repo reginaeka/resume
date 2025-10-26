@@ -13,12 +13,12 @@ class HomeController extends Controller
     public function index()
     {
         $users = User::all();
-        $sosmed = SocialMedia::all();
+        $sosmeds = SocialMedia::all();
 
         // dd($users);
         return view('home',[
             'user'=>$users->first(),
-            'sosmed'=>$sosmed
+            'sosmeds'=>$sosmeds
         ]);
     }
 }

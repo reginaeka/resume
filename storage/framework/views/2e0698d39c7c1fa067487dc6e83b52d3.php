@@ -11,8 +11,13 @@
             <p>I'm <span class="typed" data-typed-items="<?php echo e($user->role); ?>"></span><span
                     class="typed-cursor typed-cursor--blink"></span></p>
             <div class="social-links">
-                <a href="mailto:<?php echo e($sosmed[0]->link); ?>"><i class="<?php echo e($sosmed[0]->icon); ?>"></i></a>
-                <a href="<?php echo e($sosmed[1]->link); ?>"><i class="<?php echo e($sosmed[1]->icon); ?>"></i></a>
+                <?php $__currentLoopData = $sosmeds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sosmed): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php
+                        $sosmedType = $sosmed->type === 'email' ? 'mailto:' . $sosmed->href : $sosmed->href;
+                    ?>
+
+                    <a href="<?php echo e($sosmedType); ?>"><i class="<?php echo e($sosmed->icon); ?>"></i></a>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         </div>
 
