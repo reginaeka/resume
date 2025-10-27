@@ -29,3 +29,4 @@ jobs:
           log-level: verbose
           ftp-passive: true
           dry-run: true
+          force-upload: true
