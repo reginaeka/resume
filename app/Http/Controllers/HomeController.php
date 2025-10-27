@@ -15,7 +15,6 @@ class HomeController extends Controller
         $users = User::all();
         $sosmeds = SocialMedia::all();
 
-        // dd($users);
         return view('home',[
             'user'=>$users->first(),
             'sosmeds'=>$sosmeds
