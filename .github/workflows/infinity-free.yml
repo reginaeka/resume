@@ -30,3 +30,4 @@ jobs:
           ftp-passive: true
           dry-run: true
           force-upload: true
+          dangerously-ignore-sync: true
