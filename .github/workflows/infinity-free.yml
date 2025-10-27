@@ -28,3 +28,4 @@ jobs:
           timeout: 86400000
           log-level: standard
           ftp-passive: true
+          dry-run: true
