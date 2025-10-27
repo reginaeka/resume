@@ -109,9 +109,6 @@
                     @endforeach
                 </div>
             @endforeach
-
         </div>
-
     </div>
-
 </section><!-- /Skills Section -->
