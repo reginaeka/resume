@@ -43,7 +43,11 @@
                                   <i class="icon bi bi-geo-alt"> {{ $user->city }}</i>
                               </a>
                               @foreach ($sosmeds as $sosmed)
-                                  <a class="p-2" href="{{ $sosmed->href }}">
+                                  @php
+                                      $sosmedType =
+                                          $sosmed->type === 'email' ? 'mailto:' . $sosmed->href : $sosmed->href;
+                                  @endphp
+                                  <a class="p-2" href="{{ $sosmedType }}">
                                       <i class="icon {{ $sosmed->icon }}"> {{ $sosmed->label }}</i>
                                   </a>
                               @endforeach

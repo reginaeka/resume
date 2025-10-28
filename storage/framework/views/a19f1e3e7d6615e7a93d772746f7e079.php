@@ -44,7 +44,11 @@
                                   <i class="icon bi bi-geo-alt"> <?php echo e($user->city); ?></i>
                               </a>
                               <?php $__currentLoopData = $sosmeds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sosmed): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                  <a class="p-2" href="<?php echo e($sosmed->href); ?>">
+                                  <?php
+                                      $sosmedType =
+                                          $sosmed->type === 'email' ? 'mailto:' . $sosmed->href : $sosmed->href;
+                                  ?>
+                                  <a class="p-2" href="<?php echo e($sosmedType); ?>">
                                       <i class="icon <?php echo e($sosmed->icon); ?>"> <?php echo e($sosmed->label); ?></i>
                                   </a>
                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -91,8 +95,6 @@
                                       <?php else: ?>
                                       <?php endif; ?>
 
-                                      
-
                                       <ul>
                                           <?php $__currentLoopData = explode('.', $project->description); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sentence): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                               <?php if(trim($sentence) !== ''): ?>
@@ -103,14 +105,9 @@
                                       </ul>
                                   </li>
                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                              
                           </ul>
                       </div><!-- Edn Resume Item -->
                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-
-
-                  
               </div>
           </div>
       </div>

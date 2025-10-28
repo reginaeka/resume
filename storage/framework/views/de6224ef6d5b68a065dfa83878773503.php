@@ -71,7 +71,6 @@
                         </ul>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -110,10 +109,7 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
         </div>
-
     </div>
-
 </section><!-- /Skills Section -->
 <?php /**PATH D:\project resume\resume\resources\views/components/pages/about.blade.php ENDPATH**/ ?>
