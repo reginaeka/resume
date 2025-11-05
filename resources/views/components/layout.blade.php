@@ -63,7 +63,8 @@
         <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
         <script src="{{ asset('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
         <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        @stack('script')
         <!-- Main JS File -->
         <script src="{{ asset('assets/js/main.js') }}"></script>
 

@@ -102,7 +102,8 @@
         <script src="<?php echo e(asset('assets/vendor/glightbox/js/glightbox.min.js')); ?>"></script>
         <script src="<?php echo e(asset('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js')); ?>"></script>
         <script src="<?php echo e(asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')); ?>"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <?php echo $__env->yieldPushContent('script'); ?>
         <!-- Main JS File -->
         <script src="<?php echo e(asset('assets/js/main.js')); ?>"></script>
 

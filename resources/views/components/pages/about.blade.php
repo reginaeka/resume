@@ -59,13 +59,13 @@
                     <div class="col-lg-6">
                         <ul>
                             <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong>
-                                <span>{{ $user->age }} Tahun</span>
+                                <span>{{ $user->age }} years old</span>
                             </li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong>
                                 <span>{{ $education->short_degree }}</span>
                             </li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
-                                <a href="mailto:{{ $sosmed[0]->link }}"> <span>{{ $sosmed[0]->link }}</span></a>
+                                <a href="mailto:{{ $sosmed[0]->href }}"> <span>{{ $sosmed[0]->href }}</span></a>
                             </li>
 
                         </ul>

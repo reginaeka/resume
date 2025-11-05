@@ -1,0 +1,6 @@
+Error: net::ERR_FILE_NOT_FOUND at file://storage/app/temp\1382432431-0742893001762265975\index.html
+    at navigate (D:\project resume\resume\vendor\spatie\browsershot\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Frame.js:184:27)
+    at async Deferred.race (D:\project resume\resume\vendor\spatie\browsershot\node_modules\puppeteer-core\lib\cjs\puppeteer\util\Deferred.js:36:20)
+    at async CdpFrame.goto (D:\project resume\resume\vendor\spatie\browsershot\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Frame.js:150:25)
+    at async CdpPage.goto (D:\project resume\resume\vendor\spatie\browsershot\node_modules\puppeteer-core\lib\cjs\puppeteer\api\Page.js:572:20)
+    at async callChrome (D:\project resume\resume\vendor\spatie\browsershot\bin\browser.cjs:294:26)

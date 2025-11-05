@@ -59,13 +59,13 @@
                     <div class="col-lg-6">
                         <ul>
                             <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong>
-                                <span><?php echo e($user->age); ?> Tahun</span>
+                                <span><?php echo e($user->age); ?> years old</span>
                             </li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong>
                                 <span><?php echo e($education->short_degree); ?></span>
                             </li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
-                                <a href="mailto:<?php echo e($sosmed[0]->link); ?>"> <span><?php echo e($sosmed[0]->link); ?></span></a>
+                                <a href="mailto:<?php echo e($sosmed[0]->href); ?>"> <span><?php echo e($sosmed[0]->href); ?></span></a>
                             </li>
 
                         </ul>
