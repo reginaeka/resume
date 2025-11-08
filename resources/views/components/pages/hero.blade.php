@@ -15,7 +15,7 @@
                 @endforeach
 
                 <button type="button" id="download-resume" class="btn btn-primary btn-sm"
-                    data-url="{{ route('resume.download') }}">
+                    data-url="{{ asset('assets/resume/Regina-Resume.pdf') }}">
                     <i class="bi bi-download"></i> <span>Download CV</span>
                 </button>
             </div>

@@ -1,265 +1,207 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
+        <title>One Page Resume</title>
 
-        <!-- Bootstrpa Icons -->
-        
-        <link rel="stylesheet" href="<?php echo e(public_path('assets/css/resume/bootstrap-icons.css')); ?>">
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+            }
 
-        <!-- Theme CSS -->
-        <link id="theme-style" rel="stylesheet" href="<?php echo e(public_path('assets/css/resume/resume2.css')); ?>">
+            body {
+                font: 16px Helvetica, Sans-Serif;
+                line-height: 24px;
+                background: url(images/noise.jpg);
+            }
 
-        
+            .clear {
+                clear: both;
+            }
 
-        <title>Resume-Regina</title>
+            #page-wrap {
+                width: 800px;
+                margin: 40px auto 60px;
+            }
+
+            #pic {
+                float: right;
+                margin: -30px 0 0 0;
+            }
+
+            h1 {
+                margin: 0 0 16px 0;
+                padding: 0 0 16px 0;
+                font-size: 42px;
+                font-weight: bold;
+                letter-spacing: -2px;
+                border-bottom: 1px solid #999;
+            }
+
+            h2 {
+                font-size: 20px;
+                margin: 0 0 6px 0;
+                position: relative;
+            }
+
+            h2 span {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                font-style: italic;
+                font-family: Georgia, Serif;
+                font-size: 16px;
+                color: #999;
+                font-weight: normal;
+            }
+
+            p {
+                margin: 0 0 16px 0;
+            }
+
+            a {
+                color: #999;
+                text-decoration: none;
+                border-bottom: 1px dotted #999;
+            }
+
+            a:hover {
+                border-bottom-style: solid;
+                color: black;
+            }
+
+            ul {
+                margin: 0 0 32px 17px;
+            }
+
+            #objective {
+                width: 500px;
+                float: left;
+            }
+
+            #objective p {
+                font-family: Georgia, Serif;
+                font-style: italic;
+                color: #666;
+            }
+
+            dt {
+                font-style: italic;
+                font-weight: bold;
+                font-size: 18px;
+                text-align: right;
+                padding: 0 26px 0 0;
+                width: 150px;
+                float: left;
+                height: 100px;
+                border-right: 1px solid #999;
+            }
+
+            dd {
+                width: 600px;
+                float: right;
+            }
+
+            dd.clear {
+                float: none;
+                margin: 0;
+                height: 15px;
+            }
+        </style>
     </head>
 
     <body>
-        <div class="light-mode">
-            <div class="container-fluid">
-                <div class="main-content-wrapper">
-                    <div class="container-fluid">
-                        <div class="resume-wrapper mx-auto rounded-2">
-                            <div class="resume-header px-4 px-lg-5">
-                                <div class="resume-profile-holder text-center">
-                                    <img class="resume-profile-pic rounded-circle"
-                                        src="<?php echo e(public_path("assets/img/$user->pict")); ?>" alt="<?php echo e($user->pict); ?>">
-                                    <h2 class="resume-name text-uppercase"><?php echo e($user->name); ?> </h2>
-                                    <div class="resume-role-title text-uppercase">BIM Modeler</div>
-                                    <div class="resume-contact mt-4">
-                                        <ul
-                                            class="resume-contact-list list-unstyled list-inline mb-0 justify-content-between">
 
-                                            <?php $__currentLoopData = $sosmeds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sosmed): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <?php
-                                                    $sosmedType =
-                                                        $sosmed->type === 'email'
-                                                            ? 'mailto:' . $sosmed->href
-                                                            : $sosmed->href;
-                                                ?>
-                                                <a href="<?php echo e($sosmedType); ?>">
-                                                    <li class="list-inline-item me-md-3 me-lg-5"><i
-                                                            class="resume-contact-icon <?php echo e($sosmed->icon); ?> me-2"></i>
-                                                        <?php echo e($sosmed->label); ?></li>
-                                                </a>
-                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                            <a href="http://<?php echo e($user->website); ?>">
-                                                <li class="list-inline-item me-lg-5"><i
-                                                        class="resume-contact-icon bi bi-globe me-2"></i>
-                                                    <?php echo e($user->website); ?>
+        <div id="page-wrap">
 
-                                                </li>
-                                            </a>
-                                        </ul>
-                                    </div><!--//resume-contact-->
-                                </div><!--//profile-holder-->
-                            </div>
+            <img src="<?php echo e(public_path('assets/img/regina-profile-img.jpg')); ?>" alt="Photo of Cthulu" id="pic" />
 
-                            <div class="resume-body p-4 p-lg-5">
-                                <main>
-                                    <div class="row">
-                                        <div class="col-main col-12 col-lg-8 pe-lg-4">
-                                            <section class="resume-summary-section resume-section">
-                                                <h3
-                                                    class="resume-section-heading text-uppercase py-2 py-lg-3 py-2 py-lg-3">
-                                                    <i class="resume-section-heading-icon bi bi-person me-2"></i>About
-                                                    Me
-                                                </h3>
-                                                <div class="resume-summary-desc">
-                                                    <?php echo e($user->summary); ?>
+            <div id="contact-info" class="vcard">
 
-                                                </div>
-                                            </section>
+                <!-- Microformats! -->
 
-                                            <hr>
+                <h1 class="fn">C'thulhu</h1>
 
-                                            <section class="resume-experience-section resume-section">
-                                                <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
-                                                        class="resume-section-heading-icon bi bi-briefcase me-2"></i>Work
-                                                    Experience</h3>
-                                                <div class="resume-timeline position-relative">
-                                                    <?php $__currentLoopData = $experiences; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $exp): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <article class="resume-timeline-item position-relative pb-5"
-                                                            style="page-break-inside: avoid;">
-                                                            <div class="resume-timeline-item-header mb-2">
-                                                                <div
-                                                                    class="resume-position-meta d-flex justify-content-between mb-1">
-                                                                    <div class="resume-position-time">
-                                                                        <?php echo e($exp->startDate); ?>
-
-                                                                        -
-                                                                        <?php echo e($exp->endDate); ?></div>
-                                                                    <div class="resume-company-name">
-                                                                        <?php echo e($exp->company); ?>
-
-                                                                    </div>
-                                                                </div>
-                                                                <h3 class="resume-position-title mb-1">
-                                                                    <?php echo e($exp->role); ?>
-
-                                                                </h3>
-                                                            </div><!--//resume-timeline-item-header-->
-                                                            <div class="resume-timeline-item-desc">
-                                                                <ul class="resume-timeline-list">
-                                                                    <?php $__currentLoopData = $exp->projects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $project): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                                        <li>
-                                                                            <?php echo e($project->projectLocation); ?>
-
-
-                                                                            <?php
-                                                                                $startDate = $project->startDate
-                                                                                    ? \Carbon\Carbon::parse(
-                                                                                        $project->startDate,
-                                                                                    )->format('M')
-                                                                                    : null;
-                                                                                $endDate = $project->endDate
-                                                                                    ? $project->endDate
-                                                                                    : null;
-                                                                            ?>
-
-                                                                            <?php if($startDate && $endDate): ?>
-                                                                                | <?php echo e($startDate); ?> -
-                                                                                <?php echo e($endDate); ?>
-
-                                                                            <?php else: ?>
-                                                                            <?php endif; ?>
-
-                                                                            <ul>
-                                                                                <?php $__currentLoopData = explode('.', $project->description); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sentence): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                                                    <?php if(trim($sentence) !== ''): ?>
-                                                                                        <li><?php echo e(trim($sentence)); ?>.</li>
-                                                                                    <?php endif; ?>
-                                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                                                                            </ul>
-                                                                        </li>
-                                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                                </ul>
-                                                            </div>
-                                                        </article>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                </div>
-                                            </section>
-                                        </div>
-
-                                        <div class="col-12 col-lg-4 ps-lg-4">
-                                            <section class="resume-educate-section resume-section">
-                                                <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
-                                                        class="resume-section-heading-icon bi bi-book me-2"></i>Education
-                                                </h3>
-                                                <ul class="list-unstyled">
-                                                    <?php $__currentLoopData = $educations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $edu): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <li class="mb-2">
-                                                            <div class="resume-degree font-weight-bold">
-                                                                <?php echo e($edu->degree); ?>
-
-                                                            </div>
-                                                            <div class="resume-degree-org"><?php echo e($edu->school); ?></div>
-                                                            <div class="resume-degree-time"><?php echo e($edu->startYear); ?> -
-                                                                <?php echo e($edu->endYear); ?></div>
-                                                        </li>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                </ul>
-                                            </section><!--//resume-section-->
-
-                                            <hr>
-
-                                            <section class="resume-skills-section resume-section">
-                                                <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
-                                                        class="resume-section-heading-icon bi bi-gear me-2"></i>Skills
-                                                </h3>
-
-                                                <ul class="list-unstyled">
-                                                    <?php $__currentLoopData = $skills; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <li class="mb-2">
-                                                            <div class="resume-skill-name"><?php echo e($skill->skill); ?></div>
-                                                            <div class="progress resume-progress" role="progressbar"
-                                                                aria-label="Basic example"
-                                                                aria-valuenow="<?php echo e($skill->percentage); ?>"
-                                                                aria-valuemin="0" aria-valuemax="100">
-                                                                <div class="progress-bar resume-progress-bar"
-                                                                    style="width: <?php echo e($skill->percentage); ?>%">
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                </ul>
-                                            </section>
-
-                                            <hr>
-
-                                            <section class="resume-lang-section resume-section">
-                                                <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
-                                                        class="resume-section-heading-icon bi bi-translate me-2"></i>Languages
-                                                </h3>
-                                                <ul class="list-unstyled resume-lang-list">
-                                                    <li class="mb-2">
-                                                        <div class="resume-lang-name">Bahasa Indonesia</div>
-                                                        <div class="resume-level-indicator row gx-0 flex-nowrap">
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                        </div><!--//resume-level-indicator-->
-                                                    </li>
-
-                                                    <li class="mb-2">
-                                                        <div class="resume-lang-name">English</div>
-                                                        <div class="resume-level-indicator row gx-0 flex-nowrap">
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item "></span></div>
-                                                            <div class="col"><span class="item "></span></div>
-                                                            <div class="col"><span class="item "></span></div>
-                                                            <div class="col"><span class="item "></span></div>
-                                                            <div class="col"><span class="item"></span></div>
-                                                        </div><!--//resume-level-indicator-->
-                                                    </li>
-                                                </ul>
-                                            </section>
-                                        </div><!--//col-side-->
-                                    </div>
-                                </main>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <p>
+                    Cell: <span class="tel">555-666-7777</span><br />
+                    Email: <a class="email" href="mailto:greatoldone@lovecraft.com">greatoldone@lovecraft.com</a>
+                </p>
             </div>
+
+            <div id="objective">
+                <p>
+                    I am an outgoing and energetic (ask anybody) young professional, seeking a
+                    career that fits my professional skills, personality, and murderous tendencies.
+                    My squid-like head is a masterful problem solver and inspires fear in who gaze upon it.
+                    I can bring world domination to your organization.
+                </p>
+            </div>
+
+            <div class="clear"></div>
+
+            <dl>
+                <dd class="clear"></dd>
+
+                <dt>Education</dt>
+                <dd>
+                    <h2>Withering Madness University - Planet Vhoorl</h2>
+                    <p><strong>Major:</strong> Public Relations<br />
+                        <strong>Minor:</strong> Scale Tending
+                    </p>
+                </dd>
+
+                <dd class="clear"></dd>
+
+                <dt>Skills</dt>
+                <dd>
+                    <h2>Office skills</h2>
+                    <p>Office and records management, database administration, event organization, customer support,
+                        travel coordination</p>
+
+                    <h2>Computer skills</h2>
+                    <p>Microsoft productivity software (Word, Excel, etc), Adobe Creative Suite, Windows</p>
+                </dd>
+
+                <dd class="clear"></dd>
+
+                <dt>Experience</dt>
+                <dd>
+                    <h2>Doomsday Cult <span>Leader/Overlord - Baton Rogue, LA - 1926-2010</span></h2>
+                    <ul>
+                        <li>Inspired and won highest peasant death competition among servants</li>
+                        <li>Helped coordinate managers to grow cult following</li>
+                        <li>Provided untimely deaths to all who opposed</li>
+                    </ul>
+
+                    <h2>The Watering Hole <span>Bartender/Server - Milwaukee, WI - 2009</span></h2>
+                    <ul>
+                        <li>Worked on grass-roots promotional campaigns</li>
+                        <li>Reduced theft and property damage percentages</li>
+                        <li>Janitorial work, Laundry</li>
+                    </ul>
+                </dd>
+
+                <dd class="clear"></dd>
+
+                <dt>Hobbies</dt>
+                <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd>
+
+                <dd class="clear"></dd>
+
+                <dt>References</dt>
+                <dd>Available on request</dd>
+
+                <dd class="clear"></dd>
+            </dl>
+
+            <div class="clear"></div>
+
         </div>
+
     </body>
 
 </html>

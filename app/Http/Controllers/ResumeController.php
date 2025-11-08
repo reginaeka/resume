@@ -59,12 +59,23 @@ class ResumeController extends Controller
         $skills = Skill::all();
         $experiences = Experience::with('projects')->get();
 
-        return asset('storage/app/temp/1338584231-0327600001761923295/index.html');
+         return view('components.pdf.resume', [
+            'user' => $user,
+            'sosmeds' => $sosmeds,
+            'skills' => $skills,
+            'educations' => $educations,
+            'experiences' => $experiences            
+         ]);
     }
-
+    
     public function download()
     {
-        $url = asset('assets/resume/resume.pdf');
-        return response()->json(['success' => true, 'url' => $url]);
+        $url = asset('assets/resume/Regina-Resume.pdf');
+        return response()->download($url, 'Regina-Resume.pdf');
+    }
+
+    public function resumeJadi()
+    {
+        return asset('storage/app/temp/1338584231-0327600001761923295/index.html');
     }
 }

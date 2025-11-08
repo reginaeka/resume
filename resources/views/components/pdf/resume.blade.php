@@ -1,343 +1,207 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
+        <title>One Page Resume</title>
 
-        <!-- Bootstrpa Icons -->
-        {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"> --}}
-        <link rel="stylesheet" href="{{ public_path('assets/css/resume/bootstrap-icons.css') }}">
-
-        <!-- Theme CSS -->
-        <link id="theme-style" rel="stylesheet" href="{{ public_path('assets/css/resume/resume2.css') }}">
-
-        {{-- <style>
-            @page {
-                size: A4;
-            }
-
-            .light-mode {
-                background: #fff;
-                color: #354765;
-                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
-            }
-
-            body {
-                color: #a5b3ce;
-                background: #19202e;
-                font-family: "Inter", sans-serif;
-            }
-
-            body {
+        <style type="text/css">
+            * {
                 margin: 0;
-                font-family: system-ui, -apple-system, "Segoe UI", Roboto,
-                    "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
-                    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-                    "Noto Color Emoji";
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 1.5;
-                color: #212529;
-                /* text-align: var(--bs-body-text-align); */
-                background-color: #fff;
-                -webkit-text-size-adjust: 100%;
-                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                padding: 0;
             }
 
-            .container-fluid {
-                --bs-gutter-y: 0;
-                width: 180mm;
-                padding-right: 12px;
-                padding-left: 12px;
-                margin-right: auto;
-                margin-left: auto;
+            body {
+                font: 16px Helvetica, Sans-Serif;
+                line-height: 24px;
+                background: url(images/noise.jpg);
             }
 
-            .light-mode .resume-wrapper {
-                background: #fff;
-                box-shadow: 0 2 4 rgba(0, 0, 0, 0.05);
+            .clear {
+                clear: both;
             }
 
-            .resume-wrapper {
-                /* margin-top: 90px; */
+            #page-wrap {
+                width: 800px;
+                margin: 40px auto 60px;
+            }
+
+            #pic {
+                float: right;
+                margin: -30px 0 0 0;
+            }
+
+            h1 {
+                margin: 0 0 16px 0;
+                padding: 0 0 16px 0;
+                font-size: 42px;
+                font-weight: bold;
+                letter-spacing: -2px;
+                border-bottom: 1px solid #999;
+            }
+
+            h2 {
+                font-size: 20px;
+                margin: 0 0 6px 0;
                 position: relative;
-                /* padding-top: 91px; */
-                background: #1e2738;
             }
 
-            .rounded-2 {
-                border-radius: 6px !important;
+            h2 span {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                font-style: italic;
+                font-family: Georgia, Serif;
+                font-size: 16px;
+                color: #999;
+                font-weight: normal;
             }
 
-            .mx-auto {
-                margin-right: auto !important;
-                margin-left: auto !important;
+            p {
+                margin: 0 0 16px 0;
             }
 
-            .px-lg-5 {
-                padding-right: 3rem !important;
-                padding-left: 3rem !important;
+            a {
+                color: #999;
+                text-decoration: none;
+                border-bottom: 1px dotted #999;
             }
 
-            .p-lg-5 {
-                padding: 3rem !important;
+            a:hover {
+                border-bottom-style: solid;
+                color: black;
             }
 
-            .px-4 {
-                padding-right: 1.5rem !important;
-                padding-left: 1.5rem !important;
+            ul {
+                margin: 0 0 32px 17px;
             }
 
-            .p-4 {
-                padding: 1.5rem !important;
+            #objective {
+                width: 500px;
+                float: left;
             }
 
-            *,
-            *::before,
-            *::after {
-                box-sizing: border-box;
+            #objective p {
+                font-family: Georgia, Serif;
+                font-style: italic;
+                color: #666;
             }
-        </style> --}}
 
-        <title>Resume-Regina</title>
+            dt {
+                font-style: italic;
+                font-weight: bold;
+                font-size: 18px;
+                text-align: right;
+                padding: 0 26px 0 0;
+                width: 150px;
+                float: left;
+                height: 100px;
+                border-right: 1px solid #999;
+            }
+
+            dd {
+                width: 600px;
+                float: right;
+            }
+
+            dd.clear {
+                float: none;
+                margin: 0;
+                height: 15px;
+            }
+        </style>
     </head>
 
     <body>
-        <div class="light-mode">
-            <div class="container-fluid">
-                <div class="main-content-wrapper">
-                    <div class="container-fluid">
-                        <div class="resume-wrapper mx-auto rounded-2">
-                            <div class="resume-header px-4 px-lg-5">
-                                <div class="resume-profile-holder text-center">
-                                    <img class="resume-profile-pic rounded-circle"
-                                        src="{{ public_path("assets/img/$user->pict") }}" alt="{{ $user->pict }}">
-                                    <h2 class="resume-name text-uppercase">{{ $user->name }} </h2>
-                                    <div class="resume-role-title text-uppercase">BIM Modeler</div>
-                                    <div class="resume-contact mt-4">
-                                        <ul
-                                            class="resume-contact-list list-unstyled list-inline mb-0 justify-content-between">
 
-                                            @foreach ($sosmeds as $sosmed)
-                                                @php
-                                                    $sosmedType =
-                                                        $sosmed->type === 'email'
-                                                            ? 'mailto:' . $sosmed->href
-                                                            : $sosmed->href;
-                                                @endphp
-                                                <a href="{{ $sosmedType }}">
-                                                    <li class="list-inline-item me-md-3 me-lg-5"><i
-                                                            class="resume-contact-icon {{ $sosmed->icon }} me-2"></i>
-                                                        {{ $sosmed->label }}</li>
-                                                </a>
-                                            @endforeach
-                                            <a href="http://{{ $user->website }}">
-                                                <li class="list-inline-item me-lg-5"><i
-                                                        class="resume-contact-icon bi bi-globe me-2"></i>
-                                                    {{ $user->website }}
-                                                </li>
-                                            </a>
-                                        </ul>
-                                    </div><!--//resume-contact-->
-                                </div><!--//profile-holder-->
-                            </div>
+        <div id="page-wrap">
 
-                            <div class="resume-body p-4 p-lg-5">
-                                <main>
-                                    <div class="row">
-                                        <div class="col-main col-12 col-lg-8 pe-lg-4">
-                                            <section class="resume-summary-section resume-section">
-                                                <h3
-                                                    class="resume-section-heading text-uppercase py-2 py-lg-3 py-2 py-lg-3">
-                                                    <i class="resume-section-heading-icon bi bi-person me-2"></i>About
-                                                    Me
-                                                </h3>
-                                                <div class="resume-summary-desc">
-                                                    {{ $user->summary }}
-                                                </div>
-                                            </section>
+            <img src="{{ public_path('assets/img/regina-profile-img.jpg') }}" alt="Photo of Cthulu" id="pic" />
 
-                                            <hr>
+            <div id="contact-info" class="vcard">
 
-                                            <section class="resume-experience-section resume-section">
-                                                <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
-                                                        class="resume-section-heading-icon bi bi-briefcase me-2"></i>Work
-                                                    Experience</h3>
-                                                <div class="resume-timeline position-relative">
-                                                    @foreach ($experiences as $exp)
-                                                        <article class="resume-timeline-item position-relative pb-5"
-                                                            style="page-break-inside: avoid;">
-                                                            <div class="resume-timeline-item-header mb-2">
-                                                                <div
-                                                                    class="resume-position-meta d-flex justify-content-between mb-1">
-                                                                    <div class="resume-position-time">
-                                                                        {{ $exp->startDate }}
-                                                                        -
-                                                                        {{ $exp->endDate }}</div>
-                                                                    <div class="resume-company-name">
-                                                                        {{ $exp->company }}
-                                                                    </div>
-                                                                </div>
-                                                                <h3 class="resume-position-title mb-1">
-                                                                    {{ $exp->role }}
-                                                                </h3>
-                                                            </div><!--//resume-timeline-item-header-->
-                                                            <div class="resume-timeline-item-desc">
-                                                                <ul class="resume-timeline-list">
-                                                                    @foreach ($exp->projects as $project)
-                                                                        <li>
-                                                                            {{ $project->projectLocation }}
+                <!-- Microformats! -->
 
-                                                                            @php
-                                                                                $startDate = $project->startDate
-                                                                                    ? \Carbon\Carbon::parse(
-                                                                                        $project->startDate,
-                                                                                    )->format('M')
-                                                                                    : null;
-                                                                                $endDate = $project->endDate
-                                                                                    ? $project->endDate
-                                                                                    : null;
-                                                                            @endphp
+                <h1 class="fn">C'thulhu</h1>
 
-                                                                            @if ($startDate && $endDate)
-                                                                                | {{ $startDate }} -
-                                                                                {{ $endDate }}
-                                                                            @else
-                                                                            @endif
-
-                                                                            <ul>
-                                                                                @foreach (explode('.', $project->description) as $sentence)
-                                                                                    @if (trim($sentence) !== '')
-                                                                                        <li>{{ trim($sentence) }}.</li>
-                                                                                    @endif
-                                                                                @endforeach
-
-                                                                            </ul>
-                                                                        </li>
-                                                                    @endforeach
-                                                                </ul>
-                                                            </div>
-                                                        </article>
-                                                    @endforeach
-                                                </div>
-                                            </section>
-                                        </div>
-
-                                        <div class="col-12 col-lg-4 ps-lg-4">
-                                            <section class="resume-educate-section resume-section">
-                                                <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
-                                                        class="resume-section-heading-icon bi bi-book me-2"></i>Education
-                                                </h3>
-                                                <ul class="list-unstyled">
-                                                    @foreach ($educations as $edu)
-                                                        <li class="mb-2">
-                                                            <div class="resume-degree font-weight-bold">
-                                                                {{ $edu->degree }}
-                                                            </div>
-                                                            <div class="resume-degree-org">{{ $edu->school }}</div>
-                                                            <div class="resume-degree-time">{{ $edu->startYear }} -
-                                                                {{ $edu->endYear }}</div>
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            </section><!--//resume-section-->
-
-                                            <hr>
-
-                                            <section class="resume-skills-section resume-section">
-                                                <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
-                                                        class="resume-section-heading-icon bi bi-gear me-2"></i>Skills
-                                                </h3>
-
-                                                <ul class="list-unstyled">
-                                                    @foreach ($skills as $skill)
-                                                        <li class="mb-2">
-                                                            <div class="resume-skill-name">{{ $skill->skill }}</div>
-                                                            <div class="progress resume-progress" role="progressbar"
-                                                                aria-label="Basic example"
-                                                                aria-valuenow="{{ $skill->percentage }}"
-                                                                aria-valuemin="0" aria-valuemax="100">
-                                                                <div class="progress-bar resume-progress-bar"
-                                                                    style="width: {{ $skill->percentage }}%">
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            </section>
-
-                                            <hr>
-
-                                            <section class="resume-lang-section resume-section">
-                                                <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
-                                                        class="resume-section-heading-icon bi bi-translate me-2"></i>Languages
-                                                </h3>
-                                                <ul class="list-unstyled resume-lang-list">
-                                                    <li class="mb-2">
-                                                        <div class="resume-lang-name">Bahasa Indonesia</div>
-                                                        <div class="resume-level-indicator row gx-0 flex-nowrap">
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                        </div><!--//resume-level-indicator-->
-                                                    </li>
-
-                                                    <li class="mb-2">
-                                                        <div class="resume-lang-name">English</div>
-                                                        <div class="resume-level-indicator row gx-0 flex-nowrap">
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item item-full"></span>
-                                                            </div>
-                                                            <div class="col"><span class="item "></span></div>
-                                                            <div class="col"><span class="item "></span></div>
-                                                            <div class="col"><span class="item "></span></div>
-                                                            <div class="col"><span class="item "></span></div>
-                                                            <div class="col"><span class="item"></span></div>
-                                                        </div><!--//resume-level-indicator-->
-                                                    </li>
-                                                </ul>
-                                            </section>
-                                        </div><!--//col-side-->
-                                    </div>
-                                </main>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <p>
+                    Cell: <span class="tel">555-666-7777</span><br />
+                    Email: <a class="email" href="mailto:greatoldone@lovecraft.com">greatoldone@lovecraft.com</a>
+                </p>
             </div>
+
+            <div id="objective">
+                <p>
+                    I am an outgoing and energetic (ask anybody) young professional, seeking a
+                    career that fits my professional skills, personality, and murderous tendencies.
+                    My squid-like head is a masterful problem solver and inspires fear in who gaze upon it.
+                    I can bring world domination to your organization.
+                </p>
+            </div>
+
+            <div class="clear"></div>
+
+            <dl>
+                <dd class="clear"></dd>
+
+                <dt>Education</dt>
+                <dd>
+                    <h2>Withering Madness University - Planet Vhoorl</h2>
+                    <p><strong>Major:</strong> Public Relations<br />
+                        <strong>Minor:</strong> Scale Tending
+                    </p>
+                </dd>
+
+                <dd class="clear"></dd>
+
+                <dt>Skills</dt>
+                <dd>
+                    <h2>Office skills</h2>
+                    <p>Office and records management, database administration, event organization, customer support,
+                        travel coordination</p>
+
+                    <h2>Computer skills</h2>
+                    <p>Microsoft productivity software (Word, Excel, etc), Adobe Creative Suite, Windows</p>
+                </dd>
+
+                <dd class="clear"></dd>
+
+                <dt>Experience</dt>
+                <dd>
+                    <h2>Doomsday Cult <span>Leader/Overlord - Baton Rogue, LA - 1926-2010</span></h2>
+                    <ul>
+                        <li>Inspired and won highest peasant death competition among servants</li>
+                        <li>Helped coordinate managers to grow cult following</li>
+                        <li>Provided untimely deaths to all who opposed</li>
+                    </ul>
+
+                    <h2>The Watering Hole <span>Bartender/Server - Milwaukee, WI - 2009</span></h2>
+                    <ul>
+                        <li>Worked on grass-roots promotional campaigns</li>
+                        <li>Reduced theft and property damage percentages</li>
+                        <li>Janitorial work, Laundry</li>
+                    </ul>
+                </dd>
+
+                <dd class="clear"></dd>
+
+                <dt>Hobbies</dt>
+                <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd>
+
+                <dd class="clear"></dd>
+
+                <dt>References</dt>
+                <dd>Available on request</dd>
+
+                <dd class="clear"></dd>
+            </dl>
+
+            <div class="clear"></div>
+
         </div>
+
     </body>
 
 </html>

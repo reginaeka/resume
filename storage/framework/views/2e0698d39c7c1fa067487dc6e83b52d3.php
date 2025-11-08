@@ -15,7 +15,7 @@
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                 <button type="button" id="download-resume" class="btn btn-primary btn-sm"
-                    data-url="<?php echo e(route('resume.download')); ?>">
+                    data-url="<?php echo e(asset('assets/resume/Regina-Resume.pdf')); ?>">
                     <i class="bi bi-download"></i> <span>Download CV</span>
                 </button>
             </div>
