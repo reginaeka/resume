@@ -38,7 +38,6 @@
                 const url = button.getAttribute('data-url');
                 link.href = url;
 
-                // const link = "{{ route('resume.download') }}";
                 console.log('href:', link.href);
 
                 link.download = 'resume.pdf'; // paksa download
