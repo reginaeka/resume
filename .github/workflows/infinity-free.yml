@@ -27,7 +27,4 @@ jobs:
           server-dir: /reginaseptianadrah.great-site.net/htdocs/ # For addon domains
           timeout: 86400000
           log-level: verbose
-          ftp-passive: true
           dry-run: true
-          force-upload: true
-          dangerously-ignore-sync: true
